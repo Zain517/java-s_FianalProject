@@ -1,0 +1,77 @@
+<html>
+<head>
+<title> login</title>
+
+
+<script language="JavaScript" type="text/javaScript">
+
+function validate()
+{	if ( document.f.n.value == "" )
+	    {
+			var errors="First name is empty!!\n";
+			document.getElementById("name").innerHTML=errors;
+			
+		
+			//alert("First name is empty!!");			
+			return false;
+	    }
+	
+	
+	if(document.f.p.value == "")	
+	   {
+	   var errors="password is empty!!\n";
+			document.getElementById("p").innerHTML=errors;
+			//alert("password is empty!!");
+			document.f.p.focus();
+			return false;
+	   }	
+
+	
+
+	return true;
+
+}
+
+
+</script>
+
+
+
+
+
+
+<style>
+.button{
+		background-color:blue;
+		border:2px solid #white;
+		opacity:0.80;
+		border-radius:1px;
+		width:75px;
+		height:35px;
+		color:white;
+		transition:0.5s;
+		transition:0.5s;
+</style>
+</head>
+
+
+<body>
+<fieldset style="width:440px; margin-left:500px;">
+<h1><b>Welcome the Darzi-Khana</b></h1>
+
+<form name="f" action="Search" method="post" onsubmit="return validate()" >
+<br>
+
+
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Username  " name="n">
+<div id="name" style="color:red"></div>
+  
+<br>
+ 
+<input type="password" style=padding:10px; placeholder="Password" name="p"><div id="p" style="color:red"></div>
+
+<input style=float:right; class="button" type="submit" value="Next" />
+</form>
+</fieldset>
+</body>
+</html>
