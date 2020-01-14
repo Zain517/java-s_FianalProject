@@ -1,0 +1,249 @@
+<html>
+<head>
+<title> Add Order</title>
+
+
+<script language="JavaScript" type="text/javaScript">
+
+function cvalidate()
+{	
+
+	if ( document.cf.rid.value == "" )
+	    {
+			var errors="Customer's ID is empty!!\n";
+			document.getElementById("rid").innerHTML=errors;		
+			document.cf.rid.focus();			
+			return false;
+	    }
+
+	if ( document.cf.fn.value == "" )
+	    {
+			var errors="First name is empty!!\n";
+			document.getElementById("fn").innerHTML=errors;
+			document.cf.fn.focus();
+			return false;
+	    }
+		
+	if ( document.cf.ln.value == "" )
+	    {
+			var errors="Last name is empty!!\n";
+			document.getElementById("ln").innerHTML=errors;
+			document.cf.ln.focus();
+			return false;
+	    }
+	return true;	
+}
+
+
+function validate()
+{	
+	
+	if ( document.f.id.value == "" )
+	    {
+			var errors="Order's ID is empty!!\n";
+			document.getElementById("ID").innerHTML=errors;		
+			document.f.id.focus();			
+			return false;
+	    }
+
+	if ( document.f.na.value == "" )
+	    {
+			var errors="Customer's name is empty!!\n";
+			document.getElementById("name").innerHTML=errors;
+			document.f.na.focus();
+			return false;
+	    }
+		
+	if ( document.f.sq.value == "" )
+	    {
+			var errors="Quantity is empty!!\n";
+			document.getElementById("sq").innerHTML=errors;
+			document.f.sq.focus();return false;
+	    }
+	if ( document.f.co.value == "" )
+	    {
+			var errors="Color-Desc is empty!!\n";
+			document.getElementById("co").innerHTML=errors;
+			document.f.co.focus();return false;
+	    }	
+	
+	var mail=document.forms['f']['sq'].value;
+	if(mail<='0')
+		{
+			var errors="In_Valid Suit(s) Quantity.....!!\n";
+			document.getElementById("co").innerHTML=errors;
+			document.f.sq.focus();return false;
+	    }
+	if ( document.f.dt.value == "" )
+	    {
+			var errors="Design-type is empty!!\n";
+			document.getElementById("dt").innerHTML=errors;
+			document.f.dt.focus();return false;
+	    }	
+	if((document.f.subDate.value) > (document.f.deliDate.value)) 
+	   {var errors="Submission Date always less than delivery date!!\n";
+			document.getElementById("date").innerHTML=errors;
+			return false;
+	   }
+		
+		
+		
+	return cvalidate();
+
+}
+	
+
+function letternumber(event)
+	{	
+		var keychar;
+		keychar = event.key;
+		//alert(event.key)
+		// alphas and numbers
+		if (((".+-0123456789").indexOf(keychar) > -1))
+		   return true;
+		if (event.keyCode === 13)
+{
+ event.preventDefault();
+ document.getElementById("order").click();
+}		
+		else
+		{
+			alert(" Should only Numerics.....!!");
+			//document.getElementById("mobile").innerHTML=errors;
+			return false;
+		}
+	}
+	
+	
+	
+function nameVelidation(event)
+	{	
+		var keychar;
+		keychar = event.key;
+		
+		if ((("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ").indexOf(keychar) > -1))
+		   return true;
+		   		
+		else
+		{
+			alert("Special & numeric charaters not Allowed...!!");
+			//document.getElementById("fname").innerHTML=errors;
+			return false;
+		}
+	}	
+	
+	
+	
+	
+</script>
+
+
+<style>
+.button{
+		background-color:blue;
+		border:2px solid #white;
+		opacity:0.80;
+		border-radius:1px;
+		width:105px;
+		height:35px;
+		color:white;
+		transition:0.5s;
+		transition:0.5s;
+</style>
+
+</head>
+
+
+<body>
+
+<div>
+
+<div style="float:left;">
+<fieldset style="width:65px; margin-left:100px;">
+<legend><h1 style="color:red;"><b><i>( Customer's Details  ) </i></b></h1></legend>
+<form name="cf" action="customerDetails" method="post" onsubmit="return cvalidate()" >
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Registered Customer ID  " name="rid" onKeyPress="return letternumber(event)">
+<div id="rid" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="First Name  " name="fn" onKeyPress="return nameVelidation(event)">
+<div id="fn" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Last Name  " name="ln" onKeyPress="return nameVelidation(event)">
+<div id="ln" style="color:red"></div>
+<br>
+
+<input style=float:right; class="button" type="submit" id="search" value="Search " />
+
+
+</form>
+</fieldset>
+<br>
+<div>
+<fieldset style="width:350px; height:250px; margin-left:100px;">
+shjdbhsbdhhsdsh
+</div>
+
+
+</div>
+
+
+
+
+<div style=" float:right;">
+<fieldset style="width:65px; margin-right:200px;">
+<legend><h1><b><i>( New Order's Details  ) </i></b></h1></legend>
+<form name="f" action="customerDetails" method="post" onsubmit="return validate()" >
+
+
+<input style="width:350px;padding:10px;"  type="text"  placeholder="New Order ID  " name="id" onKeyPress="return letternumber(event)">
+<div id="ID" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Customer Name  " name="na" onKeyPress="return nameVelidation(event)">
+<div id="name" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Suit(s) Quantity  " name="sq" onKeyPress="return letternumber(event)">
+<div id="sq" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Colors-Description  " name="co" >
+<div id="co" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Design-type /Style " name="dt">
+<div id="dt" style="color:red"></div>
+<br>
+<strong> Submit Date:       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   Delivery Date:</strong><br>
+<input type="date" name="subDate" value="2020-01-01">&emsp;&emsp;&emsp;
+<input type="date" name="deliDate" value="2020-01-07">
+<div id="date" style="color:red"></div>
+<br><br>
+<textarea name="t" rows="5" cols="48" placeholder=" Description......"></textarea>
+<br><br>
+
+
+
+
+
+
+<input style=float:right; class="button" type="submit" id="order" onclick="document.getElementById('search').click()"  value="Add Order" />
+
+</form>
+</fieldset>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+
+</html>

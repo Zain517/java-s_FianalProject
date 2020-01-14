@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	
+	<servlet>
+		
+		<servlet-name>Insert</servlet-name>
+		<servlet-class>Insert</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>Search</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>Insert</servlet-name>
+		<url-pattern>/Insert</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/Search</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>customer</servlet-name>
+		<servlet-class>customer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>customer</servlet-name>
+		<url-pattern>/customerDetails</url-pattern>
+	</servlet-mapping>
+	
+
+
+	<servlet>
+		<servlet-name>order</servlet-name>
+		<servlet-class>neworder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>order</servlet-name>
+		<url-pattern>/placeorder</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<servlet-name>searchCustomer</servlet-name>
+		<servlet-class>searchcustomer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchCustomer</servlet-name>
+		<url-pattern>/customersearch</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>recipt</servlet-name>
+		<servlet-class>receipt</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>recipt</servlet-name>
+		<url-pattern>/generatereceipt</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>edit</servlet-name>
+		<servlet-class>update</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>edit</servlet-name>
+		<url-pattern>/edit</url-pattern>
+	</servlet-mapping>
+
+   
+   <servlet>
+		<servlet-name>finaledit</servlet-name>
+		<servlet-class>confirmupdate</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>finaledit</servlet-name>
+		<url-pattern>/finalupdate</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>del</servlet-name>
+		<servlet-class>delete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>del</servlet-name>
+		<url-pattern>/remove</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>naya</servlet-name>
+		<servlet-class>newredirect</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>naya</servlet-name>
+		<url-pattern>/newcustomer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>uptorder</servlet-name>
+		<servlet-class>updateorder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>uptorder</servlet-name>
+		<url-pattern>/orderupdate</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>final</servlet-name>
+		<servlet-class>updatefinal</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>final</servlet-name>
+		<url-pattern>/updateorder</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>deleteorder</servlet-name>
+		<servlet-class>orderdelete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteorder</servlet-name>
+		<url-pattern>/deleteorder</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>logout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<servlet-class>home</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+    <welcome-file>signup.html</welcome-file>
+	</welcome-file-list>
+	
+</web-app>
