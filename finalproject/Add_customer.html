@@ -1,0 +1,236 @@
+<html>
+<head>
+<title> Add Customer</title>
+
+
+<script language="JavaScript" type="text/javaScript">
+
+function validate(){	
+
+	if ( document.f.id.value == "" ){var errors="Customer's ID is empty!!";
+	document.getElementById("ID").innerHTML=errors;document.f.id.focus();return false;}
+
+	if ( document.f.fn.value == "" )
+	    {
+			var errors="First name is empty!!";
+			document.getElementById("fname").innerHTML=errors;
+			document.f.fn.focus();
+			return false;
+	    }
+		
+	if ( document.f.ln.value == "" )
+	    {
+			var errors="Last name is empty!!";
+			document.getElementById("lname").innerHTML=errors;document.f.ln.focus();return false;
+	    }
+	
+	if ( document.f.mb.value == "" )
+	    {
+			var errors="Mobile no. is empty!!";
+			document.getElementById("mobile").innerHTML=errors;document.f.mb.focus();
+			return false;
+	    }
+	var mail=document.forms['f']['mb'].value;
+	if(mail.length<11 || mail.length>15 )
+		{
+			var errors="In_Valid (minimum 11 digits).....!!";
+			document.getElementById("mobile").innerHTML=errors;
+			document.f.mb.focus();
+			return false;
+	    }
+		
+			
+	if ( document.f.add.value == "" )
+	    {
+			var errors="Address is empty!!";
+			document.getElementById("address").innerHTML=errors;document.f.add.focus();
+			return false;
+	    }	
+	
+	if ( document.f.kl.value == "" )
+	    {
+			var errors="kameez-Length is Empty...!!";
+			document.getElementById("kl").innerHTML=errors;document.f.kl.focus();
+			return false;
+	    }
+	if ( document.f.al.value == "" )
+	    {
+			var errors="Arm-Length is Empty...!!";
+			document.getElementById("al").innerHTML=errors;document.f.al.focus();
+			return false;
+	    }
+	if ( document.f.sh.value == "" )
+	    {
+			var errors="Shoulder-Length is Empty...!!";
+			document.getElementById("sh").innerHTML=errors;document.f.sh.focus();
+			return false;
+	    }
+	if ( document.f.ch.value == "" )
+	    {
+			var errors="Chest-Length is Empty...!!";
+			document.getElementById("ch").innerHTML=errors;document.f.ch.focus();
+			return false;
+	    }		
+	if ( document.f.co.value == "" )
+	    {
+			var errors="Collar-Length is Empty...!!";
+			document.getElementById("co").innerHTML=errors;document.f.co.focus();
+			return false;
+	    }
+	if ( document.f.fi.value == "" )
+	    {
+			var errors="Fitting-Length is Empty...!!";
+			document.getElementById("fi").innerHTML=errors;document.f.fi.focus();
+			return false;
+	    }	
+	if ( document.f.tl.value == "" )
+	    {
+			var errors="Trouser-Length is Empty...!!";
+			document.getElementById("tl").innerHTML=errors;document.f.tl.focus();
+			return false;
+	    }	
+	if ( document.f.bo.value == "" )
+	    {
+			var errors="Bottom-Opening-Length is Empty...!!";
+			document.getElementById("bo").innerHTML=errors;document.f.bo.focus();
+			return false;
+	    }	
+	if ( document.f.po.value == "" )
+	    {
+			var errors="Number of Pockets are Empty...!!";
+			document.getElementById("po").innerHTML=errors;document.f.po.focus();
+			return false;
+	    }
+	
+
+	return true;}
+
+
+function letternumber(event){	
+		var keychar;
+		keychar = event.key;
+		//alert(event.key)
+		// alphas and numbers
+		if (((".+-0123456789").indexOf(keychar) > -1))
+		   return true;
+		 		
+		else
+		{
+			alert(" Should only Numerics.....!!");
+			//document.getElementById("mobile").innerHTML=errors;
+			return false;
+		}
+	}
+	
+	
+	
+function nameVelidation(event)
+	{	
+		var keychar;
+		keychar = event.key;
+		
+		if ((("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ").indexOf(keychar) > -1))
+		   return true;
+		else
+		{
+			alert("Special & numeric charaters not Allowed...!!");
+			//document.getElementById("fname").innerHTML=errors;
+			return false;
+		}
+	}	
+	
+	
+	
+	
+</script>
+
+
+
+
+
+
+<style>
+.button{
+		background-color:blue;
+		border:2px solid #white;
+		opacity:0.80;
+		border-radius:1px;
+		width:105px;
+		height:35px;
+		color:white;
+		transition:0.5s;
+		transition:0.5s;
+</style>
+</head>
+
+
+<body>
+<fieldset style="width:480px; margin-left:500px;">
+
+<form name="f" action="customerDetails" method="post" onsubmit="return validate()" >
+
+<h1><b>New Customer's Details </b></h1>
+<br>
+
+<input style="width:350px;padding:10px;"  type="text"  placeholder="New Customer ID  " name="id" onKeyPress="return letternumber(event)">
+<div id="ID" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="First Name  " name="fn" onKeyPress="return nameVelidation(event)">
+<div id="fname" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Last Name  " name="ln" onKeyPress="return nameVelidation(event)">
+<div id="lname" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Mobile Number  " name="mb" onKeyPress="return letternumber(event)">
+<div id="mobile" style="color:red"></div>
+<br>
+<input style="width:350px;padding:10px;"  type="text"  placeholder="Address  " name="add">
+<div id="address" style="color:red"></div>
+<br>
+
+<h1><b>Customer's Measurements<sup> (inches)</sup></b></h1>
+<br>
+
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Kameez-Length  " name="kl" onKeyPress="return letternumber(event)"> 
+<div id="kl" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Arm-Length  " name="al" onKeyPress="return letternumber(event)">
+<div id="al" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Shoulder  " name="sh" onKeyPress="return letternumber(event)">
+<div id="sh" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Chest  " name="ch" onKeyPress="return letternumber(event)">
+<div id="ch" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Collar " name="co" onKeyPress="return letternumber(event)">
+<div id="co" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Fitting  " name="fi" onKeyPress="return letternumber(event)">
+<div id="fi" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Trouser-Length  " name="tl" onKeyPress="return letternumber(event)">
+<div id="tl" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Bottom-Opening  " name="bo" onKeyPress="return letternumber(event)">
+<div id="bo" style="color:red"></div>
+<br>
+<input style="width:150px;padding:10px;"  type="text"  placeholder="Pockets  " name="po" >
+<div id="po" style="color:red"></div>
+<br>
+Daman :  
+<select name="Daman">
+		<option value="square">Square</option>
+		<option value="circle">Circular</option>
+		</select>
+		
+<br>
+
+
+
+
+<input style=float:right; class="button" type="submit" id="order" value="Add Customer" />
+</form>
+</fieldset>
+</body>
+</html>
